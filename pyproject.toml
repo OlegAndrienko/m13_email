@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "m13-email"
+version = "0.1.0"
+description = ""
+authors = ["OlegAndrienko <OlegAndrienko@gmail.com>"]
+readme = "README.md"
+packages = [{include = "m13_email"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+alembic = "^1.11.1"
+sqlalchemy = "^2.0.17"
+fastapi = "^0.98.0"
+psycopg2 = "^2.9.6"
+python-dotenv = "^1.0.0"
+fastapi-mail = "^1.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
