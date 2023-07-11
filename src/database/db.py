@@ -35,6 +35,15 @@ DBSession = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 #Dependency
 
 def get_db():
+    """
+    The get_db function is a context manager that returns the database session.
+        It also handles any exceptions that may occur during the connection to the database.
+    
+    
+    :return: A generator object, which is an iterator
+    :doc-author: Trelent
+    """
+    
     db = DBSession()
     try:
         yield db    #yield keyword is used instead of return. It allows to return a generator instead of a list.

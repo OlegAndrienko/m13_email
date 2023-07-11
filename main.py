@@ -30,6 +30,17 @@ app = FastAPI()
 
 @app.post("/send-email")
 async def send_in_background(background_tasks: BackgroundTasks, body: EmailSchema):
+    """
+    The send_in_background function sends an email in the background.
+        It uses a BackgroundTasks object to add a task that will be run in the background.
+        The function returns immediately, and does not wait for the email to be sent.
+    
+    :param background_tasks: BackgroundTasks: Add a task to the background tasks queue
+    :param body: EmailSchema: Get the email address from the request body
+    :return: {&quot;message&quot;: &quot;email has been sent&quot;}
+    :doc-author: Trelent
+    """
+    
     message = MessageSchema(
         subject="Fastapi mail module",
         recipients=[body.email],
